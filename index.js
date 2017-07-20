@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const app = express();
 
 // App Setup
+app.use(morgan('combined'));
+app.use(bodyParser.json({ type: '*/*' })); // Parse all incoming requests as JSON
 
 // Server Setup
 const port = process.env.PORT || 3090; //check if PORT is available as environment variable
